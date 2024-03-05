@@ -1,11 +1,14 @@
 const express = require('express')
+const exphbs = require('express-handlebars')
 const path = require('path')
 const mysql = require('mysql')
+
 const pool = require('./db/conn')
 
 const app = express()
 
-app.use(express.static('public'))
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
 
 app.use(
     express.urlencoded({
@@ -15,14 +18,20 @@ app.use(
 
 app.use(express.json())
 
+app.use(express.static('public'))
 
 const basePath = path.join(__dirname, './Pages') 
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html')
+})
 
+// formulario de cadastro de categoria
 app.get('/category/insertcategory', (req, res) => {
-    res.sendFile(`${basePath}/crud/categoria.html`)
+    res.render('categoria')
   })
 
+//rota de persistencia de categoria
 app.post('/category/insertcategory', (req, res) => {
     const nome_categoria = req.body.nome_categoria 
     const descricao = req.body.descricao
@@ -35,14 +44,45 @@ app.post('/category/insertcategory', (req, res) => {
         }
 
         res.redirect('/')
-
     })
 })
 
+//consulta de categorias
+// app.get('/category', function(re1, res){
+//     const query  = `SELECT * FROM Categoria`
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+//     pool.query(query, function (err, data) {
+//         if (err) {
+//             console.log(err)
+//         }
+
+//         const category = data
+
+//         console.log(data)
+
+//         res.render('category', {category})
+//     })
+// })
+
+app.get('/books', function (req, res) {
+    const query = `SELECT * FROM books`
+  
+    pool.query(query, function (err, data) {
+      if (err) {
+        console.log(err)
+      }
+  
+      const books = data
+  
+      console.log(data)
+  
+      res.render('books', { books })
+    })
+  })
+  
+
+
+
 
 
 app.listen(3000)
