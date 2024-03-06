@@ -66,6 +66,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 .clock {
@@ -99,6 +100,7 @@ header {
     /*align-items: center;*/
     position: absolute;
     border-radius: 50%;
+    
 
 }
 
@@ -132,13 +134,17 @@ header {
     background: #ffffff;
     z-index: 11;
     border-radius: 6px 6px 0 0;
+    
+    
 }
 
 .section {
     position: relative;
     padding: 100px;
     background: #112434;
+    
     text-align: center;
+    
 }
 
 .section h2 {
