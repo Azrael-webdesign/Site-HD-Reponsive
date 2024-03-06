@@ -27,12 +27,12 @@ app.get('/', (req, res) => {
 })
 
 // formulario de cadastro de categoria
-app.get('/category/insertcategory', (req, res) => {
-    res.render('categoria')
+app.get('/category/createcategory', (req, res) => {
+    res.render('categoryCreate')
   })
 
 //rota de persistencia de categoria
-app.post('/category/insertcategory', (req, res) => {
+app.post('/category/createcategory', (req, res) => {
     const nome_categoria = req.body.nome_categoria 
     const descricao = req.body.descricao
 
