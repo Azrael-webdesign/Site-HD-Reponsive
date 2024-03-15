@@ -1,0 +1,485 @@
+/* Importa a fonte 'Poppins' do Google Fonts com diferentes pesos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Define as configurações padrão para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Adiciona um comportamento de rolagem suave */
+}
+
+/* Estilos para o corpo do documento */
+body {
+    min-height: 100vh; /* Altura mínima igual à altura da janela de visualização */
+    background: #333; /* Cor de fundo */
+    overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+}
+
+/* Estilos para o cabeçalho */
+header {
+    position: absolute; /* Posicionamento absoluto */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura total */
+    padding: 30px 100px; /* Preenchimento interno */
+    display: flex; /* Container flexível */
+    justify-content: space-between; /* Alinhamento dos itens */
+    align-items: center;
+    z-index: 10000; /* Ordem de empilhamento */
+}
+
+/* Estilos para o logotipo no cabeçalho */
+header .logo {
+    color: #fff; /* Cor do texto */
+    font-weight: 700; /* Peso da fonte */
+    text-decoration: none; /* Sem decoração de texto */
+    font-size: 2em; /* Tamanho da fonte */
+    text-transform: uppercase; /* Transformação para maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre caracteres */
+}
+
+/* Estilos para a lista de itens de navegação no cabeçalho */
+header ul {
+    display: flex; /* Container flexível */
+    justify-content: center; /* Alinhamento dos itens */
+    align-items: center;
+}
+
+/* Estilos para cada item de navegação no cabeçalho */
+header ul li {
+    list-style: none; /* Remove os marcadores de lista */
+    margin-left: 20px; /* Margem esquerda */
+}
+
+/* Estilos para os links de navegação no cabeçalho */
+header ul li a {
+    text-decoration: none; /* Sem decoração de texto */
+    padding: 6px 15px; /* Preenchimento interno */
+    color: #ffffff; /* Cor do texto */
+    border-radius: 20px; /* Borda arredondada */
+}
+
+/* Estilos para os links de navegação no cabeçalho quando estão em foco ou ativos */
+header ul li a:hover,
+header ul li a.active {
+    background: #112434; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+}
+
+/* Estilos para textos em negrito */
+.bold-text {
+    font-weight: bold; /* Peso da fonte */
+}
+
+/* Estilos para a seção principal */
+section {
+    position: relative; /* Posicionamento relativo */
+    width: 100%; /* Largura total */
+    height: 100vh; /* Altura igual à altura da janela de visualização */
+    padding: 100px; /* Preenchimento interno */
+    display: flex; /* Container flexível */
+    justify-content: center; /* Alinhamento dos itens */
+    align-items: center;
+    overflow: hidden; /* Oculta o conteúdo excedente */
+}
+
+/* Pseudo-elemento ::before para criar uma camada de sobreposição */
+section::before {
+    content: ''; /* Conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0; /* Alinhamento na parte inferior */
+    width: 100%; /* Largura total */
+    height: 100px; /* Altura */
+    background: linear-gradient(to top, #01b3ff91, transparent); /* Gradiente linear */
+    z-index: 1000; /* Ordem de empilhamento */
+}
+
+/* Estilos para imagens na seção principal */
+section img {
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Alinhamento no topo */
+    left: 0; /* Alinhamento na esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Redimensiona a imagem para preencher */
+    pointer-events: none; /* Desativa eventos de ponteiro */
+}
+
+/* Estilos específicos para a imagem com o id "moon" na seção principal */
+section img#moon {
+    mix-blend-mode: screen; /* Modo de mistura */
+}
+
+/* Estilos específicos para a imagem com o id "mountains_front" na seção principal */
+section img#mountains_front {
+    z-index: 10; /* Ordem de empilhamento */
+}
+
+/* Estilos para o texto na seção principal */
+#text {
+    position: absolute; /* Posicionamento absoluto */
+    right: -250px; /* Distância do lado direito */
+    color: #ffffff; /* Cor do texto */
+    white-space: nowrap; /* Não quebra a linha */
+    font-size: 7.5vw; /* Tamanho da fonte responsivo */
+    z-index: 9; /* Ordem de empilhamento */
+}
+
+/* Estilos para o botão na seção principal */
+#btn {
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Elemento em linha */
+    padding: 8px 30px; /* Preenchimento interno */
+    border-radius: 40px; /* Borda arredondada */
+    background: #fff; /* Cor de fundo */
+    color: #0051ff; /* Cor do texto */
+    font-size: 1.5em; /* Tamanho da fonte */
+    z-index: 9; /* Ordem de empilhamento */
+    transform: translateY(100px); /* Translação vertical */
+}
+
+/* Estilos para a área de fundo */
+.bkg {
+    position: relative; /* Posicionamento relativo */
+    padding: 100px; /* Preenchimento interno */
+    background: #112434; /* Cor de fundo */
+    text-align: center; /* Alinhamento do texto */
+    font-family: 'Poppins', sans-serif; /* Fonte */
+}
+
+/* Estilos para o título na área de fundo */
+.bkg h2 {
+    font-size: 3em; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    box-shadow: 0 35px 80px rgb(0, 0, 0); /* Sombra */
+}
+
+/* Estilos para a seção secundária */
+.sec {
+    position: relative; /* Posicionamento relativo */
+    padding: 100px; /* Preenchimento interno */
+    background: #333; /* Cor de fundo */
+    text-align: center; /* Alinhamento do texto */
+}
+
+/* Estilos para o título na seção secundária */
+.sec h2 {
+    font-size: 3.5em; /* Tamanho da fonte */
+    margin-bottom: 10px; /* Margem inferior */
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilos para parágrafos na seção secundária */
+.sec p {
+    font-size: 1em; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilos para títulos de primeiro nível */
+.sec h1 {
+    position: relative; /* Posicionamento relativo */
+    padding: 50px; /* Preenchimento interno */
+    background: #333; /* Cor de fundo */
+    text-align: center; /* Alinhamento do texto */
+}
+
+/* Importa a fonte 'Poppins' do Google Fonts com todos os pesos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Define as configurações padrão para todos os elementos novamente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para títulos de segundo nível */
+h2 {
+    text-align: center; /* Alinhamento do texto */
+}
+    {
+    display: flex; /* Container flexível */
+    justify-content: center; /* Alinhamento dos itens */
+    align-items: center; /* Alinhamento dos itens */
+    min-height: 100vh; /* Altura mínima igual à altura da janela de visualização */
+    background: linear-gradient(45deg, #0c0c0c, #9f9f9f, #fff); /* Gradiente linear de fundo */
+}
+
+/* Estilos para o container */
+.container {
+    position: relative; /* Posicionamento relativo */
+    display: flex; /* Container flexível */
+    justify-content: center; /* Alinhamento dos itens */
+    align-items: center; /* Alinhamento dos itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    gap: 100px 50px; /* Espaçamento entre os elementos */
+    padding: 100px 50px; /* Preenchimento interno */
+}
+
+/* Estilos para as cartas dentro do container */
+.container .card {
+    display: flex; /* Container flexível */
+    position: relative; /* Posicionamento relativo */
+    width: 250px; /* Largura */
+    height: 200px; /* Altura */
+    background: linear-gradient(#044bf1, #fff, aliceblue); /* Gradiente linear de fundo */
+    align-items: flex-start; /* Alinhamento dos itens */
+    justify-content: center; /* Alinhamento dos itens */
+    border-radius: 20px; /* Borda arredondada */
+    box-shadow: 0 35px 80px rgb(0, 0, 0); /* Sombra */
+    transition: 0.5s; /* Transição suave */
+}
+
+/* Estilos para as cartas ao passar o mouse */
+.container .card:hover {
+    height: 300px; /* Altera a altura ao passar o mouse */
+}
+
+/* Estilos para a caixa de imagem dentro das cartas */
+.container .card .imgbox {
+    position: absolute; /* Posicionamento absoluto */
+    top: 20px; /* Distância do topo */
+    width: 250px; /* Largura */
+    height: 180px; /* Altura */
+    background: #333; /* Cor de fundo */
+    border-radius: 12px; /* Borda arredondada */
+    transition: 0.5s; /* Transição suave */
+    overflow: hidden; /* Oculta o conteúdo excedente */
+}
+
+/* Estilos para a caixa de imagem ao passar o mouse */
+.container .card:hover .imgbox {
+    top: -100px; /* Altera a posição ao passar o mouse */
+    scale: 0.75; /* Escala da imagem */
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15); /* Sombra */
+}
+
+/* Estilos para as imagens dentro das caixas de imagem */
+.container .card .imgbox img {
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Alinhamento no topo */
+    left: 0; /* Alinhamento na esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Redimensiona a imagem para preencher */
+}
+
+/* Estilos para o conteúdo dentro das cartas */
+.container .card .content {
+    position: absolute; /* Posicionamento absoluto */
+    width: 100%; /* Largura total */
+    top: 252px; /* Distância do topo */
+    padding: 0 30px; /* Preenchimento interno */
+    height: 30px; /* Altura */
+    text-align: center; /* Alinhamento do texto */
+    overflow: hidden; /* Oculta o conteúdo excedente */
+    transition: 0.5s; /* Transição suave */
+}
+
+/* Estilos para o conteúdo ao passar o mouse */
+.container .card:hover .content {
+    top: 130px; /* Altera a posição ao passar o mouse */
+    height: 250px; /* Altera a altura ao passar o mouse */
+}
+
+/* Estilos para os títulos dentro do conteúdo */
+.container .card .content h2 {
+    font-size: 1.5em; /* Tamanho da fonte */
+    font-weight: 700; /* Peso da fonte */
+    color: var(--color); /* Cor do texto */
+}
+
+/* Estilos para os parágrafos dentro do conteúdo */
+.container .card .content p {
+    color: #0c0c0c; /* Cor do texto */
+    font-size: .9em; /* Tamanho da fonte */
+}
+
+/* Estilos para os links dentro do conteúdo */
+.container .card .content a {
+    text-decoration: none; /* Sem decoração de texto */
+    position: relative; /* Posicionamento relativo */
+    top: 15px; /* Distância do topo */
+    display: inline-block; /* Elemento em linha */
+    padding: 12px 15px; /* Preenchimento interno */
+    background: var(--color); /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    font-weight: 500; /* Peso da fonte */
+    border-radius: 12px; /* Borda arredondada */
+}
+
+.footer-triangulo {
+    float: left; /* Faz com que o elemento flutue para a esquerda */
+    width: 100%; /* Define a largura do elemento como 100% */
+    overflow: hidden; /* Oculta o conteúdo que transborda do elemento */
+    line-height: 0; /* Define a altura da linha como 0 */
+    transform: rotate(180deg); /* Aplica uma rotação de 180 graus ao elemento */
+    background-color: #333; /* Define a cor de fundo como #333 (cinza escuro) */
+    margin-bottom: -2px; /* Define uma margem inferior negativa de -2px */
+}
+
+.footer-triangulo svg {
+    float: left; /* Faz com que o elemento flutue para a esquerda */
+    display: block; /* Define o elemento como bloco */
+    width: calc(100% + 1.3px); /* Define a largura do elemento, com um cálculo para incluir uma folga */
+    height: 90px; /* Define a altura do elemento como 90px */
+    line-height: 0; /* Define a altura da linha como 0 */
+    margin-bottom: -2px; /* Define uma margem inferior negativa de -2px */
+}
+
+.footer-triangulo .shape-fill {
+    fill: #1c405d; /* Define a cor de preenchimento do elemento como #1c405d */
+}
+
+.main_footer {
+    background-color: #1c405d; /* Define a cor de fundo como #1c405d (azul escuro) */
+    color: #fff; /* Define a cor do texto como branca */
+    font-size: 1em; /* Define o tamanho da fonte como 1em */
+}
+
+.main_footer .content {
+    float: left; /* Faz com que o elemento flutue para a esquerda */
+    width: 70%; /* Define a largura do elemento como 70% */
+    margin: 0 5%; /* Define as margens superior e inferior como 0 e as margens esquerda e direita como 5% */
+    padding: 0px 0; /* Define o preenchimento superior e inferior como 0 e o preenchimento esquerdo e direito como 0 */
+}
+
+.container {
+    float: left; /* Faz com que o elemento flutue para a esquerda */
+    width: 100%; /* Define a largura do elemento como 100% */
+}
+
+.colfooter {
+    width: 100%; /* Define a largura do elemento como 100% */
+    height: auto; /* Define a altura como automática */
+    float: left; /* Faz com que o elemento flutue para a esquerda */
+    margin-bottom: 2em; /* Define uma margem inferior de 2em */
+    color: #ffffff; /* Define a cor do texto como branca */
+}
+
+.colfooter ul {
+    width: 100%; /* Define a largura do elemento como 100% */
+    float: left; /* Faz com que o elemento flutue para a esquerda */
+}
+
+.colfooter ul li {
+    padding: 0.2em 0em; /* Define o preenchimento superior e inferior como 0.2em e o preenchimento esquerdo e direito como 0em */
+}
+
+.colfooter ul li a {
+    text-decoration: none; /* Remove a decoração do link */
+    color: #ffffff; /* Define a cor do texto como branca */
+    font-size: 1em; /* Define o tamanho da fonte como 1em */
+    transition: 0.2s; /* Adiciona uma transição de 0.2 segundos */
+}
+
+.colfooter ul li a i {
+    font-size: 0.5em; /* Define o tamanho do ícone como 0.5em */
+}
+
+.colfooter ul li a:hover {
+    color: #004cff; /* Define a cor do texto como #004cff (azul claro) ao passar o mouse */
+}
+
+.colfooter .titleFooter {
+    font-family: 'Popins', sans-serif; /* Define a família da fonte */
+    font-size: 1.3em; /* Define o tamanho da fonte como 1.3em */
+    color: #ffffff; /* Define a cor do texto como branca */
+    padding-bottom: 1em; /* Define o preenchimento inferior como 1em */
+    margin-bottom: 0.5em; /* Define a margem inferior como 0.5em */
+    border-bottom: 1px #48a1ff solid; /* Adiciona uma borda inferior de 1px sólida com a cor #48a1ff (azul claro) */
+}
+
+.colfooter p {
+    /* Definindo a fonte e o estilo do texto */
+    font-family: 'Popins', sans-serif;
+    color: #ffffff; /* Cor do texto */
+    font-size: 1em; /* Tamanho da fonte */
+    height: 15px; /* Altura do elemento */
+}
+
+.colfooter .redesocial {
+    /* Estilização dos ícones das redes sociais */
+    color: #ffffff; /* Cor dos ícones */
+    float: left; /* Alinhamento do elemento */
+    text-decoration: none; /* Removendo sublinhado do texto */
+    display: block; /* Exibição do elemento como bloco */
+    width: 100%; /* Largura do elemento */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    transition: 0.2s; /* Transição suave de propriedades */
+}
+
+.colfooter .redesocial:hover {
+    /* Estilização ao passar o mouse sobre as redes sociais */
+    color: #004cff; /* Alterando cor dos ícones */
+    transition: 0.2s; /* Transição suave de propriedades */
+}
+
+.main_footer_copy {
+    /* Estilização do rodapé */
+    background-color: #1c405d; /* Cor de fundo */
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683); /* Sombra */
+    width: 100%; /* Largura do elemento */
+    float: left; /* Alinhamento do elemento */
+    font-family: 'Popins', sans-serif; /* Fonte do texto */
+    text-align: center; /* Alinhamento do texto */
+    padding: 1.5em 0em; /* Espaçamento interno */
+}
+
+.main_footer_copy p {
+    /* Estilização do texto dentro do rodapé */
+    font-size: 1em; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    height: 20px; /* Altura do elemento */
+}
+
+.main_footer_copy .m-b-footer {
+    /* Espaçamento inferior dentro do rodapé */
+    margin-bottom: 0.5em;
+}
+
+.main_footer_copy .by {
+    /* Estilização da seção 'by' do rodapé */
+    font-size: 0.96em; /* Tamanho da fonte */
+}
+
+.main_footer_copy .by a {
+    /* Estilização dos links dentro da seção 'by' do rodapé */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Removendo sublinhado do texto */
+    font-weight: 600; /* Peso da fonte */
+    transition: 0.2s; /* Transição suave de propriedades */
+}
+
+.main_footer_copy .by a:hover {
+    /* Estilização ao passar o mouse sobre os links */
+    text-decoration: underline; /* Adicionando sublinhado ao texto */
+    color: #0051ff; /* Alterando cor do texto */
+}
+
+.main_footer_copy .by i {
+    /* Estilização do ícone dentro da seção 'by' do rodapé */
+    font-size: 0.96em; /* Tamanho do ícone */
+    margin-right: 3px; /* Espaçamento à direita */
+    color: #004cff; /* Cor do ícone */
+}
+
+/*Responsivo*/
+/* Estilos aplicados em telas com largura mínima de 48em (768px) */
+@media (min-width:48em) {
+    .colfooter {
+        /* Ajustes de layout para telas maiores */
+        width: 30%; /* Largura da coluna */
+        margin-right: 5%; /* Margem à direita */
+        margin-bottom: 0; /* Espaçamento inferior */
+    }
+
+    .colfooter:nth-of-type(3n+0) {
+        /* Ajuste de layout para a terceira coluna */
+        margin-right: 0; /* Removendo margem à direita */
+        border-right: 0; /* Removendo borda direita */
+    }
+}

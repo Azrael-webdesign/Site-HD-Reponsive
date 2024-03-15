@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+/* Importa a fonte 'Poppins' do Google Fonts */
+
+* {
+  margin: 0;
+  /* Define margem zero para todos os elementos */
+  padding: 0;
+  /* Define preenchimento zero para todos os elementos */
+  box-sizing: border-box;
+  /* Define a caixa de modelo como 'border-box' para incluir preenchimento e borda no tamanho total */
+  font-family: 'Poppins', sans-serif;
+  /* Define a fonte padrão para todos os elementos como 'Poppins' */
+}
+
+body {
+  overflow-x: hidden;
+  /* Oculta a barra de rolagem horizontal */
+  background: #333;
+  /* Define a cor de fundo do corpo do documento como #333 */
+  min-height: 100vh;
+  /* Define a altura mínima do corpo do documento como 100% da altura da janela de visualização */
+}
+
+header {
+  position: absolute;
+  /* Define a posição do cabeçalho como absoluta */
+  top: 0;
+  /* Alinha o cabeçalho no topo da página */
+  left: 0;
+  /* Alinha o cabeçalho à esquerda da página */
+  width: 100%;
+  /* Define a largura do cabeçalho como 100% */
+  padding: 30px 100px;
+  /* Adiciona preenchimento ao cabeçalho */
+  display: flex;
+  /* Define o layout do cabeçalho como flexível */
+  justify-content: space-between;
+  /* Alinha os itens do cabeçalho com espaço entre eles */
+  align-items: center;
+  /* Alinha os itens do cabeçalho verticalmente */
+  z-index: 1000;
+  /* Define o índice de empilhamento do cabeçalho */
+}
+
+.logo {
+  color: #ffffff;
+  /* Define a cor do texto do logotipo como branco */
+  font-weight: 700;
+  /* Define o peso da fonte do logotipo como negrito */
+  font-size: 2em;
+  /* Define o tamanho da fonte do logotipo */
+  text-decoration: none;
+  /* Remove o sublinhado do logotipo */
+}
+
+.navigation {
+  display: flex;
+  /* Define o layout da navegação como flexível */
+  justify-content: center;
+  /* Alinha os itens da navegação ao centro horizontalmente */
+  align-items: center;
+  /* Alinha os itens da navegação ao centro verticalmente */
+  gap: 40px;
+  /* Define o espaçamento entre os itens da navegação */
+}
+
+.navigation li {
+  list-style: none;
+  /* Remove os marcadores de lista padrão */
+}
+
+.navigation li a {
+  text-decoration: none;
+  /* Remove o sublinhado dos links da navegação */
+  padding: 6px 15px;
+  /* Adiciona preenchimento aos links da navegação */
+  color: #ffffff;
+  /* Define a cor do texto dos links da navegação como branco */
+  border-radius: 20px;
+  /* Adiciona borda arredondada aos links da navegação */
+}
+
+.navigation li a:hover,
+.navigation li a.active {
+  background: #112434;
+  /* Define a cor de fundo dos links da navegação quando hover ou ativo */
+  color: #fff;
+  /* Define a cor do texto dos links da navegação quando hover ou ativo */
+}
+
+.bold-text {
+  font-weight: bold;
+  /* Define o peso da fonte como negrito */
+}
+
+.parallax {
+  position: relative;
+  /* Define a posição do elemento como relativa */
+  display: flex;
+  /* Define o layout do elemento como flexível */
+  justify-content: center;
+  /* Alinha os itens do elemento ao centro horizontalmente */
+  align-items: center;
+  /* Alinha os itens do elemento ao centro verticalmente */
+  height: 100vh;
+  /* Define a altura do elemento como 100% da altura da janela de visualização */
+}
+
+.clock {
+  display: flex;
+  /* Define o layout do relógio como flexível */
+  width: 350px;
+  /* Define a largura do relógio */
+  height: 350px;
+  /* Define a altura do relógio */
+  justify-content: center;
+  /* Alinha os itens do relógio ao centro horizontalmente */
+  align-items: center;
+  /* Alinha os itens do relógio ao centro verticalmente */
+  background: url(http://samuel-garcia.site/img/clock-sam.png);
+  /* Define a imagem de fundo do relógio */
+  background-size: cover;
+  /* Redimensiona a imagem de fundo para cobrir todo o elemento */
+  border: 4px solid #191919;
+  /* Adiciona uma borda sólida ao relógio */
+  border-radius: 50%;
+  /* Adiciona borda arredondada ao relógio */
+  box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
+  /* Adiciona sombra ao relógio */
+}
+
+.clock:before {
+  content: "";
+  /* Adiciona conteúdo antes do relógio */
+  position: absolute;
+  /* Define a posição como absoluta */
+  width: 15px;
+  /* Define a largura do elemento antes do relógio */
+  height: 15px;
+  /* Define a altura do elemento antes do relógio */
+  background: #b2b1b1;
+  /* Define a cor de fundo do elemento antes do relógio */
+  border-radius: 50%;
+  /* Adiciona borda arredondada ao elemento antes do relógio */
+  z-index: 999;
+  /* Define o índice de empilhamento */
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  /* Define o layout dos ponteiros como flexível */
+  justify-content: center;
+  /* Alinha os ponteiros ao centro horizontalmente */
+  /*align-items: center;*/
+  /* Comentado para desativar o alinhamento vertical dos ponteiros */
+  position: absolute;
+  /* Define a posição dos ponteiros como absoluta */
+  border-radius: 50%;
+  /* Adiciona borda arredondada aos ponteiros */
+}
+
+.hr:before {
+  content: "";
+  /* Adiciona conteúdo antes do ponteiro das horas */
+  position: absolute;
+  /* Define a posição como absoluta */
+  width: 8px;
+  /* Define a largura do elemento antes do ponteiro das horas */
+  height: 80px;
+  /* Define a altura do elemento antes do ponteiro das horas */
+  background: #ffff00;
+  /* Define a cor de fundo do elemento antes do ponteiro das horas */
+  z-index: 9;
+  /* Define o índice de empilhamento */
+  border-radius: 6px 6px 0 0;
+  /* Adiciona borda arredondada ao elemento antes do ponteiro das horas */
+  box-shadow: 0 5px 10px rgb(0, 0, 0), inset 4px 4px 10px rgba(0, 0, 0, 0.679);
+  /* Adiciona sombra ao elemento antes do ponteiro das horas */
+}
+
+.mn:before {
+  content: "";
+  /* Adiciona conteúdo antes do ponteiro dos minutos */
+  position: absolute;
+  /* Define a posição como absoluta */
+  width: 4px;
+  /* Define a largura do elemento antes do ponteiro dos minutos */
+  height: 90px;
+  /* Define a altura do elemento antes do ponteiro dos minutos */
+  background: #ffffff;
+  /* Define a cor de fundo do elemento antes do ponteiro dos minutos */
+  z-index: 10;
+  /* Define o índice de empilhamento */
+  border-radius: 6px 6px 0 0;
+  /* Adiciona borda arredondada ao elemento antes do ponteiro dos minutos */
+  box-shadow: 0 5px 10px rgba(15, 15, 15, 0.665), inset 4px 4px 10px rgba(0, 0, 0, 0.679);
+  /* Adiciona sombra ao elemento antes do ponteiro dos minutos */
+}
+
+.sc:before {
+  content: "";
+  /* Adiciona conteúdo antes do ponteiro dos segundos */
+  position: absolute;
+  /* Define a posição como absoluta */
+  width: 2px;
+  /* Define a largura do elemento antes do ponteiro dos segundos */
+  height: 150px;
+  /* Define a altura do elemento antes do ponteiro dos segundos */
+  background: #ffffff;
+  /* Define a cor de fundo do elemento antes do ponteiro dos segundos */
+  z-index: 11;
+  /* Define o índice de empilhamento */
+  border-radius: 6px 6px 0 0;
+  /* Adiciona borda arredondada ao elemento antes do ponteiro dos segundos */
+}
+
+
+.section {
+  position: relative;
+  /* Define a posição do elemento como relativa */
+  padding: 100px;
+  /* Adiciona preenchimento interno de 100px ao redor do conteúdo */
+  background: #112434;
+  /* Define a cor de fundo do elemento como #112434 */
+  text-align: center;
+  /* Alinha o texto centralmente dentro do elemento */
+}
+
+.section h2 {
+  font-size: 3em;
+  /* Define o tamanho da fonte do título como 3em */
+  color: #fff;
+  /* Define a cor do texto do título como branco */
+  margin-bottom: 10px;
+  /* Adiciona margem inferior de 10px ao título */
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683);
+  /* Adiciona uma sombra ao título */
+}
+
+.section p {
+  font-size: 1em;
+  /* Define o tamanho da fonte do parágrafo como 1em */
+  color: #fff;
+  /* Define a cor do texto do parágrafo como branco */
+  font-weight: 300;
+  /* Define o peso da fonte do parágrafo como 300 (regular) */
+}
+
+.container {
+  position: relative;
+  /* Define a posição do elemento como relativa */
+  display: flex;
+  /* Define o layout do elemento como flexível */
+  justify-content: center;
+  /* Alinha os itens do elemento ao centro horizontalmente */
+  align-items: center;
+  /* Alinha os itens do elemento ao centro verticalmente */
+  flex-wrap: wrap;
+  /* Permite que os itens do elemento sejam quebrados para uma nova linha conforme necessário */
+  gap: 10px 50px;
+  /* Define o espaçamento entre os itens do elemento */
+  padding: 10px 50px;
+  /* Adiciona preenchimento interno de 10px nas laterais e 50px no topo/fundo */
+  background-color: #333;
+  /* Define a cor de fundo do elemento como #333 */
+}
+
+.footer-triangulo {
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  width: 100%;
+  /* Define a largura do elemento como 100% */
+  overflow: hidden;
+  /* Esconde qualquer conteúdo que exceda o tamanho do elemento */
+  line-height: 0;
+  /* Define a altura da linha como 0 */
+  transform: rotate(180deg);
+  /* Rotaciona o elemento em 180 graus */
+  background-color: #333;
+  /* Define a cor de fundo do elemento como #333 */
+  margin-bottom: -2px;
+  /* Adiciona uma margem inferior negativa de 2px */
+}
+
+.footer-triangulo svg {
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  display: block;
+  /* Define o elemento como um bloco */
+  width: calc(100% + 1.3px);
+  /* Calcula a largura do elemento com 1.3px adicionais */
+  height: 90px;
+  /* Define a altura do elemento como 90px */
+  line-height: 0;
+  /* Define a altura da linha como 0 */
+  margin-bottom: -2px;
+  /* Adiciona uma margem inferior negativa de 2px */
+}
+
+.footer-triangulo .shape-fill {
+  fill: #1c405d;
+  /* Define a cor de preenchimento do elemento como #1c405d */
+}
+
+.main_footer {
+  background-color: #1c405d;
+  /* Define a cor de fundo do elemento como #1c405d */
+  color: #fff;
+  /* Define a cor do texto do elemento como branco */
+  font-size: 1em;
+  /* Define o tamanho da fonte do elemento como 1em */
+}
+
+.main_footer .content {
+  font-family: 'Popins', sans-serif;
+  /* Define a família da fonte do elemento */
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  width: 70%;
+  /* Define a largura do elemento como 70% */
+  margin: 0 5%;
+  /* Define as margens do elemento */
+  padding: 0px 0;
+  /* Define o preenchimento do elemento */
+  margin-left: 20%;
+  /* Define a margem esquerda do elemento como 20% */
+}
+
+footer .footer-container {
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  width: 100%;
+  /* Define a largura do elemento como 100% */
+}
+
+.colfooter {
+  font-family: 'Popins', sans-serif;
+  /* Define a família da fonte do elemento */
+  width: 100%;
+  /* Define a largura do elemento como 100% */
+  height: auto;
+  /* Define a altura do elemento como automática */
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  margin-bottom: 2em;
+  /* Adiciona uma margem inferior de 2em */
+  color: #ffffff;
+  /* Define a cor do texto do elemento como branco */
+}
+
+.colfooter ul {
+  width: 100%;
+  /* Define a largura do elemento como 100% */
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+}
+
+.colfooter ul li {
+  padding: 0.2em 0em;
+  /* Define o preenchimento das listas dentro do elemento */
+}
+
+.colfooter ul li a {
+  font-family: 'Popins', sans-serif;
+  /* Define a família da fonte do elemento */
+  text-decoration: none;
+  /* Remove a decoração de texto */
+  color: #ffffff;
+  /* Define a cor do texto do elemento como branco */
+  font-size: 1em;
+  /* Define o tamanho da fonte do elemento como 1em */
+  transition: 0.2s;
+  /* Adiciona uma transição suave */
+}
+
+.colfooter ul li a i {
+  font-size: 0.5em;
+  /* Define o tamanho do ícone como 0.5em */
+}
+
+.colfooter ul li a:hover {
+  color: #004cff;
+  /* Define a cor do texto do elemento como #004cff ao passar o mouse */
+}
+
+.colfooter .titleFooter {
+  font-family: 'Popins', sans-serif;
+  /* Define a família da fonte do elemento */
+  font-size: 1.3em;
+  /* Define o tamanho da fonte do elemento como 1.3em */
+  color: #ffffff;
+  /* Define a cor do texto do elemento como branco */
+  padding-bottom: 1em;
+  /* Adiciona um preenchimento inferior de 1em */
+  margin-bottom: 0.5em;
+  /* Adiciona uma margem inferior de 0.5em */
+  border-bottom: 1px #48a1ff solid;
+  /* Adiciona uma borda inferior de 1px sólida */
+}
+
+.colfooter p {
+  font-family: 'Popins', sans-serif;
+  /* Define a família da fonte do elemento */
+  color: #ffffff;
+  /* Define a cor do texto do elemento como branco */
+  font-size: 1em;
+  /* Define o tamanho da fonte do elemento como 1em */
+  height: 15px;
+  /* Define a altura do elemento como 15px */
+}
+
+.colfooter .redesocial {
+  color: #ffffff;
+  /* Define a cor do texto do elemento como branco */
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  text-decoration: none;
+  /* Remove a decoração de texto */
+  display: block;
+  /* Define o elemento como bloco */
+  width: 100%;
+  /* Define a largura do elemento como 100% */
+  margin-bottom: 10px;
+  /* Adiciona uma margem inferior de 10px */
+  transition: 0.2s;
+  /* Adiciona uma transição suave */
+}
+
+.colfooter .redesocial:hover {
+  color: #004cff;
+  /* Define a cor do texto do elemento como #004cff ao passar o mouse */
+  transition: 0.2s;
+  /* Adiciona uma transição suave */
+}
+
+.main_footer_copy {
+  background-color: #1c405d;
+  /* Define a cor de fundo do elemento como #1c405d */
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683);
+  /* Adiciona uma sombra ao elemento */
+  width: 100%;
+  /* Define a largura do elemento como 100% */
+  float: left;
+  /* Define o elemento para flutuar à esquerda */
+  font-family: 'Popins', sans-serif;
+  /* Define a família da fonte do elemento */
+  text-align: center;
+  /* Alinha o texto centralmente dentro do elemento */
+  padding: 1.5em 0em;
+  /* Adiciona um preenchimento de 1.5em no topo/fundo e 0em nas laterais */
+}
+
+.main_footer_copy p {
+  font-size: 1em;
+  /* Define o tamanho da fonte do elemento como 1em */
+  color: #ffffff;
+  /* Define a cor do texto do elemento como branco */
+  height: 20px;
+  /* Define a altura do elemento como 20px */
+}
+
+.main_footer_copy .m-b-footer {
+  margin-bottom: 0.5em;
+  /* Adiciona uma margem inferior de 0.5em */
+}
+
+.main_footer_copy .by {
+  font-size: 0.96em;
+  /* Define o tamanho da fonte do elemento como 0.96em */
+}
+
+.main_footer_copy .by a {
+  color: #fff;
+  /* Define a cor do texto do elemento como branco */
+  text-decoration: none;
+  /* Remove a decoração de texto */
+  font-weight: 600;
+  /* Define o peso da fonte do elemento como 600 (negrito) */
+  transition: 0.2s;
+  /* Adiciona uma transição suave */
+}
+
+.main_footer_copy .by a:hover {
+  text-decoration: underline;
+  /* Sublinha o texto ao passar o mouse */
+  color: #0051ff;
+  /* Define a cor do texto do elemento como #0051ff ao passar o mouse */
+}
+
+.main_footer_copy .by i {
+  font-size: 0.96em;
+  /* Define o tamanho da fonte do elemento como 0.96em */
+  margin-right: 3px;
+  /* Adiciona uma margem direita de 3px */
+  color: #004cff;
+  /* Define a cor do texto do elemento como #004cff */
+}
+
+/*Responsivo*/
+/*768PX BREAKPOINT*/
+@media (min-width:48em) {
+  .colfooter {
+    width: 30%;
+    /* Define a largura do elemento como 30% */
+    margin-right: 5%;
+    /* Adiciona uma margem direita de 5% */
+    margin-bottom: 0;
+    /* Remove a margem inferior */
+  }
+
+  .colfooter:nth-of-type(3n+0) {
+    margin-right: 0;
+    /* Remove a margem direita */
+    border-right: 0;
+    /* Remove a borda direita */
+  }
+}

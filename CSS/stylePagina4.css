@@ -1,0 +1,583 @@
+/* Define estilos para todos os elementos do documento */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilos para o cabeçalho */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #112434;
+  border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active {
+  background: #112434;
+  color: #ffffff;
+}
+
+/* Define estilos para texto em negrito */
+
+.bold-text {
+  font-weight: bold;
+}
+
+/* Estilos para a seção */
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Cria um gradiente linear para a seção */
+
+section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #ff9d00a4, transparent);
+  z-index: 1000;
+}
+
+/* Estilos para imagens de fundo na seção */
+
+section .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section .trees {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+section .girl {
+  position: absolute;
+  scale: 0.60;
+  pointer-events: none;
+  animation: animateGirl 10s linear infinite;
+}
+
+/* Animação para a imagem da menina */
+
+@keyframes animateGirl {
+  0% {
+    transform: translateX(calc(100% + 100vw));
+  }
+  50% {
+    transform: translateX(calc(-100% - 100vw));
+  }
+  50.01% {
+    transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(calc(100% + 100vw)) rotateY(180deg);
+  }
+}
+
+/* Estilos para folhas caindo na seção */
+
+.leaves {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leaves .set {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.leaves .set div {
+  position: absolute;
+  display: block;
+}
+
+.leaves .set div:nth-child(1) {
+  left: 20%;
+  animation: animate 20s linear infinite;
+}
+
+/* Define a animação para cada folha caindo */
+
+.leaves .set div:nth-child(2) {
+  left: 50%;
+  animation: animate 14s linear infinite;
+}
+
+.leaves .set div:nth-child(3) {
+  left: 70%;
+  animation: animate 12s linear infinite;
+}
+
+.leaves .set div:nth-child(4) {
+  left: 5%;
+  animation: animate 15s linear infinite;
+}
+
+.leaves .set div:nth-child(5) {
+  left: 85%;
+  animation: animate 18s linear infinite;
+}
+
+.leaves .set div:nth-child(6) {
+  left: 90%;
+  animation: animate 12s linear infinite;
+}
+
+.leaves .set div:nth-child(7) {
+  left: 15%;
+  animation: animate 14s linear infinite;
+}
+
+.leaves .set div:nth-child(8) {
+  left: 60%;
+  animation: animate 15s linear infinite;
+}
+
+/* Define a animação para a queda das folhas */
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    top: -10%;
+    transform: translateX(20px) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(-20px) rotate(45deg);
+  }
+  40% {
+    transform: translateX(-20px) rotate(90deg);
+  }
+  60% {
+    transform: translateX(20px) rotate(180deg);
+  }
+  80% {
+    transform: translateX(-20px) rotate(45deg);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(20px) rotate(225deg);
+  }
+}
+
+
+/* Define estilos para o container principal */
+
+.container {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  background-color: #112434;
+  margin-top: 0px;
+  text-align: center;
+}
+
+/* Define estilos para os títulos */
+
+.title {
+  height: 30px;
+  width: 120vh;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.594);
+}
+
+/* Estiliza o título quando passa o mouse sobre ele */
+
+.title:hover {
+  color: #7c7b7b;
+}
+
+/* Define estilos para o container da grid */
+
+.grid-container {
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  background-color: #112434;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.594);
+}
+
+/* Define estilos para os itens da grid */
+
+.grid-item {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Estiliza o item da grid quando passa o mouse sobre ele */
+
+.grid-item:hover {
+  background-color: #0056b3;
+}
+
+/* Mostra a grid quando a classe 'show-grid' está presente */
+
+.show-grid {
+  display: grid;
+}
+
+/* Define estilos para a caixa de código */
+
+.code-box {
+  background-color: #292929;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Define estilos para o título da caixa de código */
+
+.code-title {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.608);
+}
+
+/* Define estilos para o conteúdo da caixa de código */
+
+.code-content {
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Define estilos para cada linha de texto do conteúdo da caixa de código */
+
+.code-content span {
+  display: block;
+  white-space: nowrap; /* Impede que as linhas se quebrem */
+  overflow: hidden;
+}
+
+/* Adiciona um cursor piscante ao final de cada linha de texto */
+
+.code-content span::after {
+  content: '|'; /* Ícone de escrita (cursor) */
+  display: inline-block;
+  width: 0;
+  animation: cursor-blink 1.5s infinite alternate;
+}
+
+/* Remove o cursor no final do último span */
+
+.code-content span:last-child::after {
+  content: ''; /* Remove o cursor no final */
+}
+
+/* Anima a digitação de cada linha de texto */
+
+.code-content span:nth-child(n+2) {
+  animation: typing 15s steps(200, end);
+  overflow: hidden;
+}
+
+/* Define a animação de digitação */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Define a animação do cursor piscante */
+
+@keyframes cursor-blink {
+  to {
+    width: 0.5em; /* Largura do cursor */
+  }
+}
+/* Define estilos para o triângulo no rodapé */
+
+.footer-triangulo {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  background-color: #333;
+  margin-bottom: -2px;
+}
+
+/* Define estilos para o SVG dentro do triângulo */
+
+.footer-triangulo svg {
+  float: left;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 90px;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+/* Define estilos para o preenchimento do triângulo */
+
+.footer-triangulo .shape-fill {
+  fill: #1c405d;
+}
+
+/* Define estilos para o rodapé principal */
+
+.main_footer {
+  background-color: #1c405d;
+  color: #fff;
+  font-size: 1em;
+}
+
+/* Define estilos para o conteúdo do rodapé principal */
+
+.main_footer .content {
+  font-family: 'Popins', sans-serif;
+  float: left;
+  width: 70%;
+  margin: 0 5%;
+  padding: 0px 0;
+  margin-left: 20%;
+}
+
+/* Define estilos para o contêiner do rodapé */
+
+footer .footer-container {
+  float: left;
+  width: 100%;
+}
+
+/* Define estilos para as colunas do rodapé */
+
+.colfooter {
+  font-family: 'Popins', sans-serif;
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-bottom: 2em;
+  color: #ffffff;
+}
+
+/* Define estilos para as listas dentro das colunas do rodapé */
+
+.colfooter ul {
+  width: 100%;
+  float: left;
+}
+
+/* Define estilos para os itens da lista dentro das colunas do rodapé */
+
+.colfooter ul li {
+  padding: 0.2em 0em;
+}
+
+/* Define estilos para os links dentro dos itens da lista no rodapé */
+
+.colfooter ul li a {
+  font-family: 'Popins', sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
+  transition: 0.2s;
+}
+
+/* Define estilos para os ícones dentro dos links no rodapé */
+
+.colfooter ul li a i {
+  font-size: 0.5em;
+}
+
+/* Estiliza os links quando o mouse passa sobre eles */
+
+.colfooter ul li a:hover {
+  color: #004cff;
+}
+
+/* Define estilos para o título das colunas do rodapé */
+
+.colfooter .titleFooter {
+  font-family: 'Popins', sans-serif;
+  font-size: 1.3em;
+  color: #ffffff;
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px #48a1ff solid;
+}
+
+/* Define estilos para os parágrafos dentro das colunas do rodapé */
+
+.colfooter p {
+  font-family: 'Popins', sans-serif;
+  color: #ffffff;
+  font-size: 1em;
+  height: 15px;
+}
+
+/* Define estilos para os links de redes sociais no rodapé */
+
+.colfooter .redesocial {
+  color: #ffffff;
+  float: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+/* Estiliza os links de redes sociais quando o mouse passa sobre eles */
+
+.colfooter .redesocial:hover {
+  color: #004cff;
+  transition: 0.2s;
+}
+
+/* Define estilos para o rodapé de cópia principal */
+
+.main_footer_copy {
+  background-color: #1c405d;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683);
+  width: 100%;
+  float: left;
+  font-family: 'Popins', sans-serif;
+  text-align: center;
+  padding: 1.5em 0em;
+}
+
+/* Define estilos para os parágrafos dentro do rodapé de cópia principal */
+
+.main_footer_copy p {
+  font-size: 1em;
+  color: #ffffff;
+  height: 20px;
+}
+
+/* Define estilos para o texto de "by" no rodapé de cópia principal */
+
+.main_footer_copy .m-b-footer {
+  margin-bottom: 0.5em;
+}
+
+/* Define estilos para os links de crédito no rodapé de cópia principal */
+
+.main_footer_copy .by {
+  font-size: 0.96em;
+}
+
+/* Estiliza os links de crédito quando o mouse passa sobre eles */
+
+.main_footer_copy .by a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* Estiliza os links de crédito quando o mouse passa sobre eles */
+
+.main_footer_copy .by a:hover {
+  text-decoration: underline;
+  color: #0051ff;
+}
+
+/* Define estilos para os ícones dentro do texto de "by" */
+
+.main_footer_copy .by i {
+  font-size: 0.96em;
+  margin-right: 3px;
+  color: #004cff;
+}
+
+/* Responsivo para telas com largura mínima de 768px */
+
+@media (min-width: 48em) {
+  .colfooter {
+    width: 30%;
+    margin-right: 5%;
+    margin-bottom: 0;
+  }
+
+  .colfooter:nth-of-type(3n+0) {
+    margin-right: 0;
+    border-right: 0;
+  }
+}

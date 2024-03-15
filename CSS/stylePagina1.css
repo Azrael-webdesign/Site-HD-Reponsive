@@ -1,0 +1,403 @@
+/* Importa a fonte 'Poppins' do Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+/* Estilos para todos os elementos */
+* {
+  margin: 0; /* Define margem zero */
+  padding: 0; /* Define padding zero */
+  box-sizing: border-box; /* Define a modelagem da caixa de border-box */
+  font-family: 'Poppins', sans-serif; /* Define a fonte padrão */
+}
+
+/* Estilos para o corpo da página */
+body {
+  overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+  background: #fff; /* Cor de fundo branca */
+  min-height: 100vh; /* Altura mínima igual à altura da viewport */
+}
+
+/* Estilos para o cabeçalho */
+header {
+  position: absolute; /* Define a posição absoluta */
+  top: 0; /* Alinha o cabeçalho no topo */
+  left: 0; /* Alinha o cabeçalho à esquerda */
+  width: 100%; /* Largura total */
+  padding: 30px 100px; /* Espaçamento interno */
+  display: flex; /* Exibe os elementos como flexíveis */
+  justify-content: space-between; /* Alinha os itens com espaço entre eles */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  z-index: 1000; /* Define a ordem de empilhamento */
+}
+
+/* Estilos para a logo */
+.logo {
+  color: #112434; /* Cor do texto */
+  font-weight: 700; /* Peso da fonte */
+  font-size: 2em; /* Tamanho da fonte */
+  text-decoration: none; /* Remove decoração de texto */
+}
+
+/* Estilos para a navegação */
+.navigation {
+  display: flex; /* Exibe os elementos como flexíveis */
+  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
+  gap: 40px; /* Espaçamento entre os itens */
+}
+
+.navigation li {
+  list-style: none; /* Remove os marcadores de lista */
+}
+
+.navigation li a {
+  text-decoration: none; /* Remove decoração de texto */
+  padding: 6px 15px; /* Espaçamento interno */
+  color: #112434; /* Cor do texto */
+  border-radius: 20px; /* Borda arredondada */
+}
+
+.navigation li a:hover,
+.navigation li a.active {
+  background: #112434; /* Cor de fundo ao passar o mouse ou ativo */
+  color: #fff; /* Cor do texto ao passar o mouse ou ativo */
+}
+
+/* Define o peso da fonte como negrito */
+.bold-text {
+  font-weight: bold;
+}
+
+/* Estilos para a seção de paralaxe */
+.parallax {
+  position: relative; /* Define a posição como relativa */
+  display: flex; /* Exibe os elementos como flexíveis */
+  justify-content: center; /* Alinha os itens horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente */
+  height: 100vh; /* Altura igual a 100% da altura da viewport */
+}
+
+.parallax img {
+  position: absolute; /* Posiciona as imagens de forma absoluta */
+  bottom: 0; /* Alinha as imagens na parte inferior */
+  left: 0; /* Alinha as imagens à esquerda */
+  width: 100%; /* Largura total */
+  pointer-events: none; /* Não permite eventos de mouse nas imagens */
+}
+
+#text {
+  position: absolute; /* Posiciona o texto de forma absoluta */
+  top: 50%; /* Alinha o texto verticalmente ao centro */
+  transform: translateY(-40%); /* Move o texto para cima */
+  font-size: 4em; /* Tamanho da fonte */
+  color: #112434; /* Cor do texto */
+}
+
+/* Estilos para a seção secundária */
+.sec {
+  position: relative; /* Define a posição como relativa */
+  padding: 100px; /* Espaçamento interno */
+  background: #112434; /* Cor de fundo */
+  text-align: center; /* Alinhamento do texto */
+}
+
+.sec h2 {
+  font-size: 3em; /* Tamanho da fonte do título */
+  color: #fff; /* Cor do texto */
+  margin-bottom: 10px; /* Margem inferior */
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683); /* Sombra */
+}
+
+.sec p {
+  font-size: 1em; /* Tamanho da fonte do parágrafo */
+  color: #fff; /* Cor do texto */
+  font-weight: 300; /* Peso da fonte */
+}
+/* Estilos para o contêiner */
+.container {
+  position: relative; /* Define a posição relativa */
+  display: flex; /* Exibe os elementos como flexíveis */
+  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
+  flex-wrap: wrap; /* Permite que os itens sejam distribuídos em várias linhas */
+  gap: 100px 50px; /* Espaçamento entre os elementos */
+  padding: 100px 50px; /* Espaçamento interno */
+  background-color: #333; /* Cor de fundo */
+}
+
+/* Estilos para os cartões dentro do contêiner */
+.container .card {
+  display: flex; /* Exibe os elementos como flexíveis */
+  position: relative; /* Define a posição relativa */
+  width: 350px; /* Largura do cartão */
+  height: 300px; /* Altura do cartão */
+  background: linear-gradient(#989898, #88bbff, rgba(116, 190, 255, 0.698)); /* Gradiente de fundo */
+  align-items: flex-start; /* Alinha os itens ao início */
+  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  border-radius: 20px; /* Borda arredondada */
+  box-shadow: 0 35px 80px rgb(0, 0, 0); /* Sombra */
+  transition: 0.5s; /* Transição suave */
+}
+
+/* Ao passar o mouse sobre o cartão, altera a altura */
+.container .card:hover {
+  height: 400px; /* Altura aumentada */
+}
+
+/* Estilos para a caixa de imagem dentro do cartão */
+.container .card .imgbox {
+  position: absolute; /* Define a posição absoluta */
+  top: 20px; /* Distância do topo */
+  width: 250px; /* Largura da caixa de imagem */
+  height: 220px; /* Altura da caixa de imagem */
+  background: #333; /* Cor de fundo */
+  border-radius: 12px; /* Borda arredondada */
+  transition: 0.5s; /* Transição suave */
+  overflow: hidden; /* Oculta o conteúdo que extrapola a caixa */
+}
+
+/* Ao passar o mouse sobre o cartão, move a caixa de imagem para cima */
+.container .card:hover .imgbox {
+  top: -100px; /* Movimento para cima */
+  scale: 0.75; /* Redução de escala */
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15); /* Sombra */
+}
+
+/* Estilos para a imagem dentro da caixa de imagem */
+.container .card .imgbox img {
+  position: absolute; /* Define a posição absoluta */
+  top: 0; /* Alinha a imagem ao topo */
+  left: 0; /* Alinha a imagem à esquerda */
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Redimensiona a imagem para cobrir o contêiner */
+}
+
+/* Estilos para o conteúdo dentro do cartão */
+.container .card .content {
+  position: absolute; /* Define a posição absoluta */
+  width: 100%; /* Largura total */
+  top: 252px; /* Distância do topo */
+  padding: 0 30px; /* Espaçamento interno */
+  height: 30px; /* Altura do conteúdo */
+  text-align: center; /* Alinhamento do texto */
+  overflow: hidden; /* Oculta o conteúdo que extrapola o contêiner */
+  transition: 0.5s; /* Transição suave */
+}
+
+/* Ao passar o mouse sobre o cartão, altera a posição e a altura do conteúdo */
+.container .card:hover .content {
+  top: 130px; /* Nova distância do topo */
+  height: 250px; /* Nova altura do conteúdo */
+}
+
+/* Estilos para o título dentro do conteúdo do cartão */
+.container .card .content h2 {
+  font-size: 1.5em; /* Tamanho da fonte do título */
+  font-weight: 700; /* Peso da fonte */
+  color: var(--color); /* Cor do texto */
+}
+
+/* Estilos para o parágrafo dentro do conteúdo do cartão */
+.container .card .content p {
+  color: #0c0c0c; /* Cor do texto */
+  font-size: .9em; /* Tamanho da fonte */
+}
+
+/* Estilos para o link dentro do conteúdo do cartão */
+.container .card .content a {
+  text-decoration: none; /* Remove decoração de texto */
+  position: relative; /* Define a posição relativa */
+  top: 15px; /* Distância do topo */
+  display: inline-block; /* Exibe como bloco */
+  padding: 12px 15px; /* Espaçamento interno */
+  background: var(--color); /* Cor de fundo */
+  color: #2a2929; /* Cor do texto */
+  font-weight: 500; /* Peso da fonte */
+  border-radius: 12px; /* Borda arredondada */
+}
+
+/* Estilos para o triângulo do rodapé */
+.footer-triangulo {
+  float: left; /* Alinha o elemento à esquerda */
+  width: 100%; /* Largura total */
+  overflow: hidden; /* Oculta o conteúdo que extrapola o elemento */
+  line-height: 0; /* Altura da linha */
+  transform: rotate(180deg); /* Rotaciona o elemento em 180 graus */
+  background-color: #333; /* Cor de fundo */
+  margin-bottom: -2px; /* Margem inferior negativa para compensar a rotação */
+}
+
+/* Estilos para o SVG dentro do triângulo do rodapé */
+.footer-triangulo svg {
+  float: left; /* Alinha o elemento à esquerda */
+  display: block; /* Exibe como bloco */
+  width: calc(100% + 1.3px); /* Largura calculada */
+  height: 90px; /* Altura */
+  line-height: 0; /* Altura da linha */
+  margin-bottom: -2px; /* Margem inferior negativa para compensar a rotação */
+}
+
+/* Estilos para o preenchimento do triângulo do rodapé */
+.footer-triangulo .shape-fill {
+  fill: #1c405d; /* Cor de preenchimento */
+}
+
+/* Estilos para o rodapé principal */
+.main_footer {
+  background-color: #1c405d; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  font-size: 1em; /* Tamanho da fonte */
+}
+
+/* Estilos para o conteúdo do rodapé principal */
+.main_footer .content {
+  float: left; /* Alinha o elemento à esquerda */
+  width: 70%; /* Largura */
+  margin: 0 5%; /* Margem */
+  padding: 0px 0; /* Espaçamento interno */
+}
+
+/* Estilos para o contêiner */
+.container {
+  float: left; /* Alinha o elemento à esquerda */
+  width: 100%; /* Largura total */
+}
+
+/* Estilos para as colunas do rodapé */
+.colfooter {
+  width: 100%; /* Largura total */
+  height: auto; /* Altura automática */
+  float: left; /* Alinha o elemento à esquerda */
+  margin-bottom: 2em; /* Margem inferior */
+  color: #ffffff; /* Cor do texto */
+}
+
+/* Estilos para as listas não ordenadas dentro das colunas do rodapé */
+.colfooter ul {
+  width: 100%; /* Largura total */
+  float: left; /* Alinha o elemento à esquerda */
+}
+
+/* Estilos para os itens da lista dentro das colunas do rodapé */
+.colfooter ul li {
+  padding: 0.2em 0em; /* Espaçamento interno */
+}
+
+/* Estilos para os links dentro dos itens da lista nas colunas do rodapé */
+.colfooter ul li a {
+  text-decoration: none; /* Remove decoração de texto */
+  color: #ffffff; /* Cor do texto */
+  font-size: 1em; /* Tamanho da fonte */
+  transition: 0.2s; /* Transição suave */
+}
+
+/* Estilos para os ícones dentro dos links nas colunas do rodapé */
+.colfooter ul li a i {
+  font-size: 0.5em; /* Tamanho do ícone */
+}
+
+/* Ao passar o mouse sobre os links nas colunas do rodapé, altera a cor */
+.colfooter ul li a:hover {
+  color: #004cff; /* Nova cor do texto */
+}
+
+/* Estilos para o título nas colunas do rodapé */
+.colfooter .titleFooter {
+  font-family: 'Popins', sans-serif; /* Fonte do título */
+  font-size: 1.3em; /* Tamanho da fonte */
+  color: #ffffff; /* Cor do texto */
+  padding-bottom: 1em; /* Espaçamento inferior */
+  margin-bottom: 0.5em; /* Margem inferior */
+  border-bottom: 1px #48a1ff solid; /* Borda inferior */
+}
+
+/* Estilos para o parágrafo nas colunas do rodapé */
+.colfooter p {
+  font-family: 'Popins', sans-serif; /* Fonte do parágrafo */
+  color: #ffffff; /* Cor do texto */
+  font-size: 1em; /* Tamanho da fonte */
+  height: 15px; /* Altura */
+}
+
+/* Estilos para os links de redes sociais nas colunas do rodapé */
+.colfooter .redesocial {
+  color: #ffffff; /* Cor do texto */
+  float: left; /* Alinha o elemento à esquerda */
+  text-decoration: none; /* Remove decoração de texto */
+  display: block; /* Exibe como bloco */
+  width: 100%; /* Largura total */
+  margin-bottom: 10px; /* Margem inferior */
+  transition: 0.2s; /* Transição suave */
+}
+
+/* Ao passar o mouse sobre os links de redes sociais nas colunas do rodapé, altera a cor */
+.colfooter .redesocial:hover {
+  color: #004cff; /* Nova cor do texto */
+  transition: 0.2s; /* Transição suave */
+}
+
+/* Estilos para a cópia do rodapé principal */
+.main_footer_copy {
+  background-color: #1c405d; /* Cor de fundo */
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683); /* Sombra */
+  width: 100%; /* Largura total */
+  float: left; /* Alinha o elemento à esquerda */
+  font-family: 'Popins', sans-serif; /* Fonte */
+  text-align: center; /* Alinhamento do texto */
+  padding: 1.5em 0em; /* Espaçamento interno */
+}
+
+/* Estilos para o parágrafo na cópia do rodapé principal */
+.main_footer_copy p {
+  font-size: 1em; /* Tamanho da fonte */
+  color: #ffffff; /* Cor do texto */
+  height: 20px; /* Altura */
+}
+
+/* Estilos para o espaçamento inferior na cópia do rodapé principal */
+.main_footer_copy .m-b-footer {
+  margin-bottom: 0.5em; /* Margem inferior */
+}
+
+/* Estilos para a assinatura na cópia do rodapé principal */
+.main_footer_copy .by {
+  font-size: 0.96em; /* Tamanho da fonte */
+}
+
+/* Estilos para os links de assinatura na cópia do rodapé principal */
+.main_footer_copy .by a {
+  color: #fff; /* Cor do texto */
+  text-decoration: none; /* Remove decoração de texto */
+  font-weight: 600; /* Peso da fonte */
+  transition: 0.2s; /* Transição suave */
+}
+
+/* Ao passar o mouse sobre os links de assinatura na cópia do rodapé principal, altera a cor */
+.main_footer_copy .by a:hover {
+  text-decoration: underline; /* Sublinha o texto */
+  color: #0051ff; /* Nova cor do texto */
+}
+
+/* Estilos para o ícone na cópia do rodapé principal */
+.main_footer_copy .by i {
+  font-size: 0.96em; /* Tamanho da fonte */
+  margin-right: 3px; /* Margem direita */
+  color: #004cff; /* Cor do texto */
+}
+
+/* Estilos responsivos */
+/* Ponto de interrupção em 768px */
+@media (min-width:48em) {
+  /* Estilos para as colunas do rodapé */
+  .colfooter {
+    width: 30%; /* Largura */
+    margin-right: 5%; /* Margem direita */
+    margin-bottom: 0; /* Margem inferior */
+  }
+
+  /* Estilos para a terceira coluna do rodapé */
+  .colfooter:nth-of-type(3n+0) {
+    margin-right: 0; /* Margem direita */
+    border-right: 0; /* Borda à direita */
+  }
+}
