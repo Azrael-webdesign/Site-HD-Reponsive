@@ -18,13 +18,24 @@ app.use(
 
 app.use(express.json())
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
+
+//app.use(express.static('javascript'))
+
+//app.use(express.static(path.join(__dirname, 'Pages')));
+// app.use(express.static(path.join(__dirname, 'CSS')))
+// app.use(express.static(path.join(__dirname, 'images')))
+// app.use(express.static(path.join(__dirname, 'javascript')))
+//app.use(express.static(path.join(__dirname, 'Pages')))
+
+
+
 
 const basePath = path.join(__dirname, './Pages') 
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/index.html')
+// })
 
 // formulario de cadastro de categoria
 app.get('/category/createcategory', (req, res) => {
@@ -46,43 +57,5 @@ app.post('/category/createcategory', (req, res) => {
         res.redirect('/')
     })
 })
-
-//consulta de categorias
-// app.get('/category', function(re1, res){
-//     const query  = `SELECT * FROM Categoria`
-
-//     pool.query(query, function (err, data) {
-//         if (err) {
-//             console.log(err)
-//         }
-
-//         const category = data
-
-//         console.log(data)
-
-//         res.render('category', {category})
-//     })
-// })
-
-app.get('/books', function (req, res) {
-    const query = `SELECT * FROM books`
-  
-    pool.query(query, function (err, data) {
-      if (err) {
-        console.log(err)
-      }
-  
-      const books = data
-  
-      console.log(data)
-  
-      res.render('books', { books })
-    })
-  })
-  
-
-
-
-
 
 app.listen(3000)
