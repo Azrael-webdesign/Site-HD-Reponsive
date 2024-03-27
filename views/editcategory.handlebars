@@ -1,0 +1,13 @@
+<h1>Edição de Categoria:</h1>
+<form class="form" action="/categories/updatecategory" method="POST">
+  <input type="hidden" name="id" value="{{category.idCategoria}}">
+  <div class="form-control">
+    <label for="nome_categoria">Nome da categoria</label>
+    <input type="text" name="nome_categoria" placeholder="Nome da Categoria" value="{{category.nome_categoria}}">
+  </div>
+  <div class="form-control">
+    <label for="descricao">Descricao da Categoria</label>
+    <input type="text" name="descricao" placeholder="Quantas páginas o livro tem?" value="{{category.descricao}}">
+  </div>
+  <input type="submit" value="Editar">
+</form>
