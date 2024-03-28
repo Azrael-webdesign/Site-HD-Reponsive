@@ -6,3 +6,14 @@ titles.forEach(title => { // Itera sobre cada elemento da NodeList
     gridContainer.classList.toggle('show-grid'); // Adiciona ou remove a classe 'show-grid' do elemento selecionado
   });
 });
+function toggleContent(id) {
+  var content = document.getElementById('content' + id);
+  // Verifica se o conteúdo está visível
+  if (content.style.display === 'block') {
+    // Se estiver visível, oculta o conteúdo
+    content.style.display = 'none';
+  } else {
+    // Se estiver oculto, mostra o conteúdo
+    content.style.display = 'block';
+  }
+}

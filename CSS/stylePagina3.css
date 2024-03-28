@@ -453,6 +453,7 @@ footer .footer-container {
 }
 
 .main_footer_copy p {
+  font-family: 'Popins', sans-serif;
   font-size: 1em;
   /* Define o tamanho da fonte do elemento como 1em */
   color: #ffffff;
@@ -467,11 +468,13 @@ footer .footer-container {
 }
 
 .main_footer_copy .by {
+  font-family: 'Popins', sans-serif;
   font-size: 0.96em;
   /* Define o tamanho da fonte do elemento como 0.96em */
 }
 
 .main_footer_copy .by a {
+  font-family: 'Popins', sans-serif;
   color: #fff;
   /* Define a cor do texto do elemento como branco */
   text-decoration: none;

@@ -255,6 +255,7 @@ section .girl {
   cursor: pointer;
   transition: color 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.594);
+  background-color: #0046809a;
 }
 
 /* Estiliza o título quando passa o mouse sobre ele */
@@ -297,80 +298,40 @@ section .girl {
   display: grid;
 }
 
-/* Define estilos para a caixa de código */
 
-.code-box {
-  background-color: #292929;
-  border-radius: 5px;
-  padding: 20px;
+
+  /* Estilo para o console de programação */
+  .console {
+    
+    background-color: #112434;
+    color: white;
+    padding: 50px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 100%; /* Ajusta a largura conforme o conteúdo */
 }
-
-/* Define estilos para o título da caixa de código */
-
-.code-title {
-  text-align: center;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.608);
+  
+.console h2 {
+  margin: 0 auto; /* Centraliza o título na tela */
+  background-color: #0046809d;
 }
-
-/* Define estilos para o conteúdo da caixa de código */
-
-.code-content {
-  color: #fff;
-  font-size: 16px;
-}
-
-/* Define estilos para cada linha de texto do conteúdo da caixa de código */
-
-.code-content span {
-  display: block;
-  white-space: nowrap; /* Impede que as linhas se quebrem */
-  overflow: hidden;
-}
-
-/* Adiciona um cursor piscante ao final de cada linha de texto */
-
-.code-content span::after {
-  content: '|'; /* Ícone de escrita (cursor) */
-  display: inline-block;
-  width: 0;
-  animation: cursor-blink 1.5s infinite alternate;
-}
-
-/* Remove o cursor no final do último span */
-
-.code-content span:last-child::after {
-  content: ''; /* Remove o cursor no final */
-}
-
-/* Anima a digitação de cada linha de texto */
-
-.code-content span:nth-child(n+2) {
-  animation: typing 15s steps(200, end);
-  overflow: hidden;
-}
-
-/* Define a animação de digitação */
-
-@keyframes typing {
-  from {
-    width: 0;
+  .content {
+    display: none;
+    animation: typeEffect 2s steps(40) forwards;
+    text-align: center;
   }
-  to {
-    width: 100%;
+  @keyframes typeEffect {
+    from {
+      width: 0;
+      margin-left: 50%; /* Começa do centro */
+    }
+    to {
+      width: 100%;
+      margin-left: 0; /* Retorna para a posição inicial após a digitação */
+    }
   }
-}
-
-/* Define a animação do cursor piscante */
-
-@keyframes cursor-blink {
-  to {
-    width: 0.5em; /* Largura do cursor */
-  }
-}
 /* Define estilos para o triângulo no rodapé */
 
 .footer-triangulo {
