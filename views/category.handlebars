@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <h1>Nome da Categoria: {{category.nome_categoria}}</h1>
+    <h1>Descrição da Categoria: {{category.descricao}}</h1>
+    <div>
+      <a href="/categories/edit/{{category.idCategoria}}">Editar</a>
+      <form action="/categories/remove/{{category.idCategoria}}" method="POST">
+        <input type="submit" value="Deletar">
+      </form>
+    </div>
+  </div>
+</div>

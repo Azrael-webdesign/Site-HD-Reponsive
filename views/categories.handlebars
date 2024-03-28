@@ -1,0 +1,6 @@
+<h1>Categorias Disponiveis</h1>
+<div>
+  {{#each categories}}
+    <div>#{{this.idCategoria}} - <span class="bold"><a href="/categories/{{this.idCategoria}}">{{this.nome_categoria}}</a></span> - {{this.descricao}}</div>
+  {{/each}}
+</div>

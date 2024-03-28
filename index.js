@@ -18,7 +18,8 @@ app.use(
 
 app.use(express.json())
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 const basePath = path.join(__dirname, './Pages') 
 
@@ -26,13 +27,13 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-// formulario de cadastro de categoria
-app.get('/category/createcategory', (req, res) => {
+// abrir formulario de cadastro de categoria verbo get
+app.get('/categories/createcategory', (req, res) => {
     res.render('categoryCreate')
-  })
+})
 
-//rota de persistencia de categoria
-app.post('/category/createcategory', (req, res) => {
+// persistencia de categoria verbo post 
+app.post('/categories/createcategory', (req, res) => {
     const nome_categoria = req.body.nome_categoria 
     const descricao = req.body.descricao
 
@@ -43,46 +44,99 @@ app.post('/category/createcategory', (req, res) => {
             console.log(err)
         }
 
-        res.redirect('/')
+        res.redirect('/categories')
     })
 })
 
-//consulta de categorias
-// app.get('/category', function(re1, res){
-//     const query  = `SELECT * FROM Categoria`
+// listagem de categorias
+app.get('/categories', function (req, res) {
+    const query = `SELECT * FROM Categoria`
 
-//     pool.query(query, function (err, data) {
-//         if (err) {
-//             console.log(err)
-//         }
-
-//         const category = data
-
-//         console.log(data)
-
-//         res.render('category', {category})
-//     })
-// })
-
-app.get('/books', function (req, res) {
-    const query = `SELECT * FROM books`
-  
     pool.query(query, function (err, data) {
+        if (err) {
+          console.log(err)
+        }
+    
+        const categories = data
+
+        console.log(data)
+
+        res.render('categories', { categories } )
+    })
+})
+
+// Listar Categoria por ID
+app.get('/categories/:id', function (req, res) {
+    const id = req.params.id
+  
+    const query = `SELECT * FROM Categoria WHERE ?? = ?`
+    const data = ['idCategoria', id] //nome banco, nome url
+  
+    pool.query(query, data, function (err, data) {
       if (err) {
         console.log(err)
       }
   
-      const books = data
+      const category = data[0]
   
-      console.log(data)
+      console.log(data[0])
   
-      res.render('books', { books })
+      res.render('category', { category })
     })
   })
+
+  // edicao de cateogira
+  app.get('/categories/edit/:id', function (req, res) {
+    const id = req.params.id
   
+    const query = `SELECT * FROM Categoria WHERE ?? = ?`
+    const data = ['idCategoria', id]
+  
+    pool.query(query, data, function (err, data) {
+      if (err) {
+        console.log(err)
+      }
+  
+      const category = data[0]
+  
+      console.log(data[0])
+  
+      res.render('editcategory', { category })
+    })
+  })
 
+  // persistencia da alteracao dos dados da categoria
+  app.post('/categories/updatecategory', function (req, res) {
+    const id = req.body.id
+    const nome_categoria = req.body.nome_categoria
+    const descricao = req.body.descricao
+  
+    const query = `UPDATE Categoria SET ?? = ?, ?? = ? WHERE ?? = ?`
+    const data = ['nome_categoria', nome_categoria, 'descricao', descricao, 'idCategoria', id]
+  
+    pool.query(query, data, function (err) {
+      if (err) {
+        console.log(err)
+      }
+  
+      res.redirect(`/categories/edit/${id}`)
+    })
+  })
 
-
-
+  // deletar categoria
+  app.post('/categories/remove/:id', function (req, res) {
+    const id = req.params.id
+  
+    const query = `DELETE FROM Categoria WHERE ?? = ?`
+    const data = ['idCategoria', id]
+  
+    pool.query(query, data, function (err) {
+      if (err) {
+        console.log(err)
+      }
+  
+      res.redirect(`/categories`)
+    })
+  })
 
 app.listen(3000)
