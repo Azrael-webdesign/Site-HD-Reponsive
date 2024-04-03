@@ -1,12 +1,31 @@
-<div>
+
+<div id="category-page">
+  <a href="/categories">Voltar</a>
   <div>
     <h1>Nome da Categoria: {{category.nome_categoria}}</h1>
     <h1>Descrição da Categoria: {{category.descricao}}</h1>
     <div>
       <a href="/categories/edit/{{category.idCategoria}}">Editar</a>
       <form action="/categories/remove/{{category.idCategoria}}" method="POST">
-        <input type="submit" value="Deletar">
+        <input type="submit" value="Deletar" onclick="return confirmarAcao()">
       </form>
     </div>
   </div>
 </div>
+ 
+
+<script>
+  function confirmarAcao() {
+    // Exibe a caixa de diálogo de confirmação
+    const confirmacao = confirm("Tem certeza que deseja prosseguir com a exclusão?");
+
+    // Verifica se o usuário clicou em "OK"
+    if (confirmacao) {
+      // Se confirmado, o formulário será enviado
+      return true;
+    } else {
+      // Caso o usuário clique em "Cancelar" ou feche a caixa de diálogo
+      return false;
+    }
+  }
+</script>

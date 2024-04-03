@@ -18,7 +18,10 @@ app.use(
 
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(express.static('public'))
 
 
 const basePath = path.join(__dirname, './Pages') 
@@ -67,76 +70,77 @@ app.get('/categories', function (req, res) {
 
 // Listar Categoria por ID
 app.get('/categories/:id', function (req, res) {
-    const id = req.params.id
-  
-    const query = `SELECT * FROM Categoria WHERE ?? = ?`
-    const data = ['idCategoria', id] //nome banco, nome url
-  
-    pool.query(query, data, function (err, data) {
-      if (err) {
-        console.log(err)
-      }
-  
-      const category = data[0]
-  
-      console.log(data[0])
-  
-      res.render('category', { category })
-    })
-  })
+  const id = req.params.id
 
-  // edicao de cateogira
-  app.get('/categories/edit/:id', function (req, res) {
-    const id = req.params.id
-  
-    const query = `SELECT * FROM Categoria WHERE ?? = ?`
-    const data = ['idCategoria', id]
-  
-    pool.query(query, data, function (err, data) {
-      if (err) {
-        console.log(err)
-      }
-  
-      const category = data[0]
-  
-      console.log(data[0])
-  
-      res.render('editcategory', { category })
-    })
-  })
+  const query = `SELECT * FROM Categoria WHERE ?? = ?`
+  const data = ['idCategoria', id] //nome banco, nome url
 
-  // persistencia da alteracao dos dados da categoria
-  app.post('/categories/updatecategory', function (req, res) {
-    const id = req.body.id
-    const nome_categoria = req.body.nome_categoria
-    const descricao = req.body.descricao
-  
-    const query = `UPDATE Categoria SET ?? = ?, ?? = ? WHERE ?? = ?`
-    const data = ['nome_categoria', nome_categoria, 'descricao', descricao, 'idCategoria', id]
-  
-    pool.query(query, data, function (err) {
-      if (err) {
-        console.log(err)
-      }
-  
-      res.redirect(`/categories/edit/${id}`)
-    })
-  })
+  pool.query(query, data, function (err, data) {
+    if (err) {
+      console.log(err)
+    }
 
-  // deletar categoria
-  app.post('/categories/remove/:id', function (req, res) {
-    const id = req.params.id
-  
-    const query = `DELETE FROM Categoria WHERE ?? = ?`
-    const data = ['idCategoria', id]
-  
-    pool.query(query, data, function (err) {
-      if (err) {
-        console.log(err)
-      }
-  
-      res.redirect(`/categories`)
-    })
+    const category = data[0]
+
+    console.log(data[0])
+
+    res.render('category', { category })
   })
+})
+
+// edicao de cateogira
+app.get('/categories/edit/:id', function (req, res) {
+  const id = req.params.id
+
+  const query = `SELECT * FROM Categoria WHERE ?? = ?`
+  const data = ['idCategoria', id]
+
+  pool.query(query, data, function (err, data) {
+    if (err) {
+      console.log(err)
+    }
+
+    const category = data[0]
+
+    console.log(data[0])
+
+    res.render('editcategory', { category })
+  })
+})
+
+// persistencia da alteracao dos dados da categoria
+app.post('/categories/updatecategory', function (req, res) {
+  const id = req.body.id
+  const nome_categoria = req.body.nome_categoria
+  const descricao = req.body.descricao
+
+  const query = `UPDATE Categoria SET ?? = ?, ?? = ? WHERE ?? = ?`
+  const data = ['nome_categoria', nome_categoria, 'descricao', descricao, 'idCategoria', id]
+
+  pool.query(query, data, function (err) {
+    if (err) {
+      console.log(err)
+    }
+
+    //res.redirect(`/categories/edit/${id}`)
+    res.redirect('/categories')
+  })
+})
+
+// deletar categoria
+app.post('/categories/remove/:id', function (req, res) {
+  const id = req.params.id
+
+  const query = `DELETE FROM Categoria WHERE ?? = ?`
+  const data = ['idCategoria', id]
+
+  pool.query(query, data, function (err) {
+    if (err) {
+      console.log(err)
+    }
+
+    res.redirect(`/categories`)
+  })
+})
 
 app.listen(3000)

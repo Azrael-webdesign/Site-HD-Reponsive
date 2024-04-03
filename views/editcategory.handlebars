@@ -7,7 +7,18 @@
   </div>
   <div class="form-control">
     <label for="descricao">Descricao da Categoria</label>
-    <input type="text" name="descricao" placeholder="Quantas páginas o livro tem?" value="{{category.descricao}}">
+    <input type="text" name="descricao" placeholder="Descricao da categoria" value="{{category.descricao}}">
   </div>
-  <input type="submit" value="Editar">
+  <input type="submit" value="Editar" onclick="return confirmarAcao()">
 </form>
+
+<script>
+  function confirmarAcao() {
+    const confirmacao = confirm("Tem certeza que deseja prosseguir com a alteração?");
+    if (confirmacao) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+</script>
