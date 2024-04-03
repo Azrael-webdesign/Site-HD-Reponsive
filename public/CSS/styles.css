@@ -10,10 +10,6 @@
     margin-bottom: 1em;
   }
   
-  p  {
-    border: solid;
-  }
-
   #navbar ul {
     display: flex;
     list-style: none;
