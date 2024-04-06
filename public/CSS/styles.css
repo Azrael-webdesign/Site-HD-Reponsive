@@ -1,81 +1,149 @@
+/* pagina de estilos do backend handlebars */
+
+
+
+/* Estilos para todos os elementos */
 * {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Define a fonte padrão */
+  }
+
+/* Estilo do header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
+
+/* Estilo dos menus horizontais */
+nav {
+    float: right;
+    position: absolute;
+    top: 80%;
+    right: 40px;
+    top: 70px;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  
-  #navbar {
-    border-bottom: 1px solid #ccc;
-    padding: 1em;
-    margin-bottom: 1em;
-  }
-  
-  #navbar ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  #navbar ul li {
-    margin-left: 1em;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  
-  .form {
-    width: 450px;
-    margin: 0 auto;
-  }
-  
-  .form-control {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5em;
-  }
-  
-  .form-control label {
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    background-color: #555;
+    border-radius: 20%;
+}
+
+
+/* Estilo do corpo */
+body {
+    color:#2e2c2c;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/entardecerBackEnd.jpg');
+    background-size: cover;
     font-weight: bold;
-    margin-bottom: 0.3em;
-  }
-  
-  .form-control input {
-    padding: 5px;
-  }
-  
-  /* categories */
-  .categories-container {
-    width: 450px;
-    margin: 0 auto;
-  }
-  
-  .categories-container div {
+}
+
+/*Page Categories*/
+
+.categories-container h1{
+    padding-left: 20px;
+}
+
+.h2 {
+    margin-right: 10px;
+}
+
+.categories-container div {
     border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* efeito dos links */
+
+/* estado inicial link*/
+.categories-container a:link {
+    text-decoration: none;
+    color: #180c0c;
     padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
     margin: 5px;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  /* category */
-  #category-page {
-    padding: 2em;
-  }
-  
-  #category-page .container {
+
+}
+
+/* já visitado visited*/
+.categories-container a:visited {
+    text-decoration: none;
+    color: rgba(49, 43, 43, 0.466);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* quando passa o mouse hover*/
+.categories-container a:hover {
+    box-shadow: 6px 6px 11px rgba(0, 0, 0, 0.808);
+    border-radius: 5px;
+    color: black;
+}
+
+/* quando passa o mouse active*/
+.categories-container a:active {
+    text-decoration: none;
+}
+
+.categories-container input {
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.categories-container input:hover {
+    box-shadow: 6px 6px 11px rgba(0, 0, 0, 0.808);
+    border-radius: 5px;
+    color: black;
+}
+
+
+
+
+/* Estilo do footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
     text-align: center;
-  }
-  
-  .actions {
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .actions a {
-    margin-right: 1em;
-  }
-  
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p a {
+    color: rgba(211, 211, 211, 0.603);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+footer p a:hover {
+    text-decoration: none;
+    background-color: #555;
+    border-radius: 20%;
+}

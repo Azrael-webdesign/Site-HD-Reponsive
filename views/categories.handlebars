@@ -1,6 +1,9 @@
-<h1>Categorias Disponiveis</h1>
 <div class="categories-container">
+  <h1>Categorias Disponiveis</h1>
   {{#each categories}}
-    <div>#{{this.idCategoria}} - <span class="bold"><a href="/categories/{{this.idCategoria}}">{{this.nome_categoria}}</a></span> - {{this.descricao}}</div>
+    <div>
+      <span class="nome_categoria"><a href="/categories/{{this.idCategoria}}"> {{this.nome_categoria}} </a></span> 
+      - {{this.descricao}}
+    </div>
   {{/each}}
 </div>
