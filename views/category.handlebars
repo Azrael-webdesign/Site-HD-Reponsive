@@ -1,5 +1,5 @@
 
-<div class="categories-container">
+<div class="category-container">
   <div>
     <h2>Nome da Categoria: {{category.nome_categoria}}</h2>
     <h2>Descrição da Categoria: {{category.descricao}}</h2>
@@ -7,7 +7,7 @@
       <a href="/categories">Voltar</a>
       <a href="/categories/edit/{{category.idCategoria}}">Editar</a>
       <form action="/categories/remove/{{category.idCategoria}}" method="POST">
-        <input type="submit" value="Deletar" onclick="return confirmarAcao()">
+        <input type="submit" class="vermelho" value="Deletar" onclick="return confirmarAcao()">
       </form>
     </div>
   </div>
