@@ -1,10 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
-const mysql = require('mysql')
-
 const pool = require('./db/conn')
-
 const app = express()
 
 app.engine('handlebars', exphbs.engine())
