@@ -16,12 +16,17 @@
 
 <script>
   function confirmarAcao() {
-    // Exibe a caixa de diálogo de confirmação
-    const confirmacao = confirm("Tem certeza que deseja prosseguir com a exclusão?");
+    const nomeCategoria = "{{category.nome_categoria}}"
+
+    // Exibe a caixa de diálogo de confirmação de exclusão
+    const confirmacao = confirm("Tem certeza que deseja prosseguir com a exclusão da Categoria?" +
+      "Categoria: " + nomeCategoria
+    );
 
     // Verifica se o usuário clicou em "OK"
     if (confirmacao) {
       // Se confirmado, o formulário será enviado
+      alert("Categoria: " + nomeCategoria + " - Excluida com Sucesso!!!")
       return true;
     } else {
       // Caso o usuário clique em "Cancelar" ou feche a caixa de diálogo

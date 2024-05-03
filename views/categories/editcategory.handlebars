@@ -1,0 +1,35 @@
+<h1>Edição de Categoria:</h1>
+<form class="form" action="/categories/updatecategory" method="POST" onsubmit="return confirmarAcao()">
+  <input type="hidden" name="id" value="{{category.idCategoria}}">
+  <div class="form-control">
+    <label for="nome_categoria">Nome da categoria</label>
+    <input type="text" name="nome_categoria" id="nome_categoria" placeholder="Nome da Categoria" value="{{category.nome_categoria}}">
+  </div>
+  <div class="form-control">
+    <label for="descricao">Descricao da Categoria</label>
+    <input type="text" name="descricao" id="descricao" placeholder="Descricao da categoria" value="{{category.descricao}}">
+  </div>
+  <input type="submit" value="Editar">
+  <a href="/categories">Voltar</a>
+</form>
+
+<script>
+  function confirmarAcao() {
+    const nomeCategoriaAntigo = "{{category.nome_categoria}}"; // Valor antigo do nome da categoria
+    const descricaoAntiga = "{{category.descricao}}"; // Valor antigo da descrição
+
+    const nomeCategoriaNovo = document.getElementById('nome_categoria').value; // Novo valor do nome da categoria
+    const descricaoNova = document.getElementById('descricao').value; // Novo valor da descrição
+
+    const confirmacao = confirm(
+      "Tem certeza que deseja prosseguir com a alteração?\n\n" +
+      "Nome antigo: " + nomeCategoriaAntigo + "\n" +
+      "Nome novo: " + nomeCategoriaNovo + "\n\n" +
+      "Descrição antiga: " + descricaoAntiga + "\n" +
+      "Descrição nova: " + descricaoNova
+    );
+
+    alert("Edição Realizada com Sucesso!!!")
+    return confirmacao;
+  }
+</script>

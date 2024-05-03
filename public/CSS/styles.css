@@ -61,6 +61,19 @@ body {
 
 /*Page Categories*/
 
+.categories-container {
+    max-height: 400px; /* Defina a altura máxima do contêiner */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+    padding-left: 20px; /* Adicione algum espaçamento à esquerda */
+}
+
+.categories-container div {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+
 .categories-container h1{
     padding-left: 20px;
 }
@@ -69,11 +82,7 @@ body {
     margin-right: 10px;
 }
 
-.categories-container div {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 5px;
-}
+
 
 
 /*Page Category*/

@@ -1,5 +1,5 @@
 <h1>Cadastro Categorias:</h1>
-<form action="/categories/createcategory" method="POST" class="form">
+<form action="/categories/createcategory" method="POST" class="form" onsubmit="return sucesso()">
     <div class="form-control">
         <label for="nome_categoria">Nome da Categoria</label>
         <input type="text" name="nome_categoria" placeholder="Digite o nome da Categoria">
@@ -9,4 +9,12 @@
         <input type="text" name="descricao" placeholder="Digite a descricao da Categoria">
     </div>
     <input type="submit" value="Cadastrar">
+    <a href="/categories">Voltar</a>
 </form>
+
+<script>
+    function sucesso() {
+        alert("Categoria cadastrada com sucesso");
+        return true; // Permite o envio do formulário após o alerta
+    }
+</script>
