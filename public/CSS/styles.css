@@ -52,11 +52,13 @@ nav ul li a:hover {
 
 /* Estilo do corpo */
 body {
-    color:#2e2c2c;
+    background-color:#112434;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     background-size: cover;
     font-weight: bold;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.683); /* Sombra */
 }
 
 /*Page Categories*/

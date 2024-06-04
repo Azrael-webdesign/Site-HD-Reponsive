@@ -5,7 +5,7 @@
 const express = require('express')
 const router  = express.Router()
 const path = require('path')
-const pool = require('../db/conn')
+const pool = require('../../db/conn')
 
 
 // abrir formulario de cadastro de categoria verbo get
@@ -106,7 +106,7 @@ router.post('/updatecategory', function (req, res) {
       console.log(err)
     }
 
-    res.redirect('./')
+    res.redirect('./') // direciona para listagem de categorias
   })
 })
 

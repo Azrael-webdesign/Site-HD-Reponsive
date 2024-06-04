@@ -4,7 +4,7 @@ const path = require('path')
 const app = express()
 
 //importar routers
-const categoryRoutes = require('./categories') //chamando arquivo index.js do categories router
+const categoryRoutes = require('./routers/categories') //chamando arquivo index.js do categories router
 
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
